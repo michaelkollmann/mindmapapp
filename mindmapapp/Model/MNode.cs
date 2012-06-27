@@ -13,25 +13,31 @@ namespace mindmapapp.Model
     public class MNode : IList<MNode>
     {
         private string _title;
-        private Color _color;
+        private Color? _color;
         private Point _point;
         private IList<MNode> _list = new List<MNode>();
+        private NodeState _state;
 
 
 
-        public MNode(string Title, Color Color, Point Point)
+        #region Constructors
+        public MNode(string Title, Point Point)
+            : this(Title, Point, null) { }
+        public MNode(string Title, Point Point, Color? Color)
         {
             this.Title = Title;
             this.Color = Color;
             this.Point = Point;
         }
+        #endregion
 
+        #region Properties
         public string Title
         {
             get { return _title; }
             set { _title = value; }
         }
-        public Color Color
+        public Color? Color
         {
             get { return _color; }
             set { _color = value; }
@@ -41,7 +47,12 @@ namespace mindmapapp.Model
             get { return _point; }
             set { _point = value; }
         }
-
+        public NodeState State
+        {
+            get { return _state; }
+            set { _state = value; }
+        }
+        #endregion
 
         #region IList<MNode>
         public int IndexOf(MNode item)
