@@ -21,6 +21,11 @@ namespace mindmapapp.Controls
         public Thought()
         {
             this.InitializeComponent();
+        }
+
+        public void SetDataContext(object DataContext)
+        {
+            this.DataContext = DataContext;
             switch ((this.DataContext as ViewModel.VMNode).State)
             {
                 case mindmapapp.Model.NodeState.Master:

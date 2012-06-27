@@ -9,10 +9,14 @@
     xmlns:mm="using:mindmapapp.Controls"
     mc:Ignorable="d">
 
-    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
-        <mm:Thought HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <!--<Canvas >
-            <Canvas Name="cnvs" Background="Black" Width="30" Height="30" PointerPressed="Canvas_PointerPressed_1" PointerCaptureLost="cnvs_PointerCaptureLost_1" PointerMoved="Canvas_PointerMoved_1" PointerReleased="cnvs_PointerCaptureLost_1" Canvas.Left="275" Canvas.Top="83"/>
-        </Canvas>-->
-    </Grid>
+    <Canvas Background="#FFEDEDED">
+        <mm:Thought HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="tghtMaster" Canvas.Left="{Binding Point.X}" Canvas.Top="{Binding Point.Y}"/>
+
+        <mm:Thought HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="tghtParent1" Canvas.Left="{Binding Point.X}" Canvas.Top="{Binding Point.Y}"/>
+        <mm:Thought HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="tghtParent2" Canvas.Left="{Binding Point.X}" Canvas.Top="{Binding Point.Y}"/>
+
+        <mm:Thought HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="tghtChild1" Canvas.Left="{Binding Point.X}" Canvas.Top="{Binding Point.Y}"/>
+        <mm:Thought HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="tghtChild2" Canvas.Left="{Binding Point.X}" Canvas.Top="{Binding Point.Y}"/>
+        <mm:Thought HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="tghtChild3" Canvas.Left="{Binding Point.X}" Canvas.Top="{Binding Point.Y}"/>
+    </Canvas>
 </Page>

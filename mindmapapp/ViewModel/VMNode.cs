@@ -53,6 +53,21 @@ namespace mindmapapp.ViewModel
                 }
             }
         }
+        public Point Point
+        {
+            get
+            {
+                return _model.Point;
+            }
+            set
+            {
+                if (_model.Point != value)
+                {
+                    _model.Point = value;
+                    RaisePropertyChanged("Point");
+                }
+            }
+        }
 
         #endregion
 

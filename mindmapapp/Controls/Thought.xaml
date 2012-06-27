@@ -41,9 +41,6 @@
             <Setter Property="Foreground" Value="#FF424242" />
         </Style>
     </UserControl.Resources>
-    <UserControl.DataContext>
-        <vm:VMNode />
-    </UserControl.DataContext>
     <Grid Name="grdBorder" Style="{StaticResource grdBorderStyle}">
         <Grid Name="grdBackground">
             <TextBlock Text="{Binding Title}" Name="txblTitle"/>
