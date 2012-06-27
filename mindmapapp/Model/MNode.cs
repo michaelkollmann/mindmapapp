@@ -21,13 +21,14 @@ namespace mindmapapp.Model
 
 
         #region Constructors
-        public MNode(string Title, Point Point)
-            : this(Title, Point, null) { }
-        public MNode(string Title, Point Point, Color? Color)
+        public MNode(string Title, Point Point, NodeState State)
+            : this(Title, Point, State, null) { }
+        public MNode(string Title, Point Point, NodeState State, Color? Color)
         {
             this.Title = Title;
             this.Color = Color;
             this.Point = Point;
+            this.State = State;
         }
         #endregion
 

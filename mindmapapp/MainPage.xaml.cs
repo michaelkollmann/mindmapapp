@@ -21,9 +21,11 @@ namespace mindmapapp
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private bool _isPressed;
         public MainPage()
         {
             this.InitializeComponent();
+            _isPressed = false;
         }
 
         /// <summary>
@@ -33,6 +35,26 @@ namespace mindmapapp
         /// property is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+        }
+
+
+        private void Canvas_PointerPressed_1(object sender, PointerRoutedEventArgs e)
+        {
+            _isPressed = true;
+        }
+
+        private void Canvas_PointerMoved_1(object sender, PointerRoutedEventArgs e)
+        {
+            if (_isPressed)
+            {
+                cnvs.SetValue(Canvas.LeftProperty, e.GetCurrentPoint(null).Position.X - 20);
+                cnvs.SetValue(Canvas.TopProperty, e.GetCurrentPoint(null).Position.Y - 20);
+            }
+        }
+
+        private void cnvs_PointerCaptureLost_1(object sender, PointerRoutedEventArgs e)
+        {
+            _isPressed = false;
         }
     }
 }
