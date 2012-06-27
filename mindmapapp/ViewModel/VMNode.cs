@@ -32,12 +32,14 @@ namespace mindmapapp.ViewModel
         public void Add(VMNode item)
         {
             _collection.Add(item);
+            _model.Add(item._model);
             RaiseCollectionChanged(NotifyCollectionChangedAction.Add);
         }
 
         public void Clear()
         {
             _collection.Clear();
+            _model.Clear();
             RaiseCollectionChanged(NotifyCollectionChangedAction.Reset);
         }
 
@@ -63,8 +65,10 @@ namespace mindmapapp.ViewModel
 
         public bool Remove(VMNode item)
         {
+            bool value = _collection.Remove(item);
+            _model.Remove(item._model);
             RaiseCollectionChanged(NotifyCollectionChangedAction.Remove);
-            return _collection.Remove(item);
+            return value;            
         }
 
         public IEnumerator<VMNode> GetEnumerator()

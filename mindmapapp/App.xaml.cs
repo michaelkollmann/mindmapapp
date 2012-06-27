@@ -32,6 +32,7 @@ namespace mindmapapp
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+
         }
 
         /// <summary>
