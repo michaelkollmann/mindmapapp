@@ -6,11 +6,13 @@
     xmlns:local="using:mindmapapp"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mm="using:mindmapapp.Controls"
     mc:Ignorable="d">
 
     <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
-        <Canvas >
+        <mm:Thought HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <!--<Canvas >
             <Canvas Name="cnvs" Background="Black" Width="30" Height="30" PointerPressed="Canvas_PointerPressed_1" PointerCaptureLost="cnvs_PointerCaptureLost_1" PointerMoved="Canvas_PointerMoved_1" PointerReleased="cnvs_PointerCaptureLost_1" Canvas.Left="275" Canvas.Top="83"/>
-        </Canvas>
+        </Canvas>-->
     </Grid>
 </Page>

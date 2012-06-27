@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using mindmapapp.Model;
+using Windows.Foundation;
 
 namespace mindmapapp.ViewModel
 {
@@ -15,7 +16,49 @@ namespace mindmapapp.ViewModel
         private MNode _model;
         private readonly ICollection<VMNode> _collection = new Collection<VMNode>();
 
+        #region Properties
+        public string Title
+        {
+            get
+            {
+                switch (_model.State)
+                {
+                    case NodeState.Master: return "." + _model.Title.ToLower();
+                    case NodeState.Parent: return _model.Title.ToUpper();
+                    case NodeState.Child: return _model.Title;
+                    default: goto case NodeState.Child;
+                }
+            }
+            set
+            {
+                if (_model.Title != value)
+                {
+                    _model.Title = value;
+                    RaisePropertyChanged("Title");
+                }
+            }
+        }
+        public NodeState State
+        {
+            get
+            {
+                return _model.State;
+            }
+            set
+            {
+                if (_model.State != value)
+                {
+                    _model.State = value;
+                    RaisePropertyChanged("State");
+                }
+            }
+        }
+
+        #endregion
+
         #region Constructors
+        public VMNode()
+            : this(new MNode("Lindmap", new Point(10, 10), NodeState.Master)){ }
         public VMNode(MNode Model)
             : this(Model, Enumerable.Empty<MNode>()) { }
         public VMNode(MNode Model, IEnumerable<MNode> Children)
@@ -68,7 +111,7 @@ namespace mindmapapp.ViewModel
             bool value = _collection.Remove(item);
             _model.Remove(item._model);
             RaiseCollectionChanged(NotifyCollectionChangedAction.Remove);
-            return value;            
+            return value;
         }
 
         public IEnumerator<VMNode> GetEnumerator()

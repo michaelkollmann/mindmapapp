@@ -38,23 +38,23 @@ namespace mindmapapp
         }
 
 
-        private void Canvas_PointerPressed_1(object sender, PointerRoutedEventArgs e)
-        {
-            _isPressed = true;
-        }
+        //private void Canvas_PointerPressed_1(object sender, PointerRoutedEventArgs e)
+        //{
+        //    _isPressed = true;
+        //}
 
-        private void Canvas_PointerMoved_1(object sender, PointerRoutedEventArgs e)
-        {
-            if (_isPressed)
-            {
-                cnvs.SetValue(Canvas.LeftProperty, e.GetCurrentPoint(null).Position.X - 20);
-                cnvs.SetValue(Canvas.TopProperty, e.GetCurrentPoint(null).Position.Y - 20);
-            }
-        }
+        //private void Canvas_PointerMoved_1(object sender, PointerRoutedEventArgs e)
+        //{
+        //    if (_isPressed)
+        //    {
+        //        cnvs.SetValue(Canvas.LeftProperty, e.GetCurrentPoint(null).Position.X - 20);
+        //        cnvs.SetValue(Canvas.TopProperty, e.GetCurrentPoint(null).Position.Y - 20);
+        //    }
+        //}
 
-        private void cnvs_PointerCaptureLost_1(object sender, PointerRoutedEventArgs e)
-        {
-            _isPressed = false;
-        }
+        //private void cnvs_PointerCaptureLost_1(object sender, PointerRoutedEventArgs e)
+        //{
+        //    _isPressed = false;
+        //}
     }
 }

@@ -1,0 +1,52 @@
+﻿<UserControl
+    x:Class="mindmapapp.Controls.Thought"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:mindmapapp.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:mindmapapp.ViewModel"
+    mc:Ignorable="d"
+    d:DesignHeight="100"
+    d:DesignWidth="150">
+    <UserControl.Resources>
+        <Style x:Key="grdBorderStyle" TargetType="Grid">
+            <Setter Property="Background" Value="#FFEDEDED" />
+        </Style>
+        <Style x:Name="grdBackgroundBaseStyle" x:Key="grdBackgroundBaseStyle" TargetType="Grid">
+            <Setter Property="Margin" Value="3" />
+        </Style>
+        <Style x:Name="grdBackgroundMasterStyle" x:Key="grdBackgroundMasterStyle" TargetType="Grid" BasedOn="{StaticResource grdBackgroundBaseStyle}">
+            <Setter Property="Background" Value="#FFCD5A43" />
+        </Style>
+        <Style x:Name="grdBackgroundStyle" x:Key="grdBackgroundStyle" TargetType="Grid" BasedOn="{StaticResource grdBackgroundBaseStyle}">
+            <Setter Property="Background" Value="#FFEDEDED" />
+        </Style>
+        <Style x:Name="txblMasterStyle" x:Key="txblMasterStyle" TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="VerticalAlignment" Value="Bottom" />
+            <Setter Property="Margin" Value="4, 10, 35, 4" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="RenderTransform">
+                <Setter.Value>
+                    <TranslateTransform X="-2" Y="6"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Name="txblStyle" x:Key="txblStyle" TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="0, 0, 0, -3" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Foreground" Value="#FF424242" />
+        </Style>
+    </UserControl.Resources>
+    <UserControl.DataContext>
+        <vm:VMNode />
+    </UserControl.DataContext>
+    <Grid Name="grdBorder" Style="{StaticResource grdBorderStyle}">
+        <Grid Name="grdBackground">
+            <TextBlock Text="{Binding Title}" Name="txblTitle"/>
+        </Grid>
+    </Grid>
+</UserControl>
