@@ -8,8 +8,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:mm="using:mindmapapp.Controls"
     mc:Ignorable="d">
+    <!--<Grid Name="grd" />-->
+    <mm:MindMap x:Name="Map"/>
 
-    <Canvas Background="#FFEDEDED">
+    <!--<Canvas Background="#FFEDEDED"  >
         <mm:Thought HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="tghtMaster" Canvas.Left="{Binding Point.X}" Canvas.Top="{Binding Point.Y}"/>
 
         <mm:Thought HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="tghtParent1" Canvas.Left="{Binding Point.X}" Canvas.Top="{Binding Point.Y}"/>
@@ -18,5 +20,6 @@
         <mm:Thought HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="tghtChild1" Canvas.Left="{Binding Point.X}" Canvas.Top="{Binding Point.Y}"/>
         <mm:Thought HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="tghtChild2" Canvas.Left="{Binding Point.X}" Canvas.Top="{Binding Point.Y}"/>
         <mm:Thought HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="tghtChild3" Canvas.Left="{Binding Point.X}" Canvas.Top="{Binding Point.Y}"/>
-    </Canvas>
+        <Line StrokeThickness="4" Fill="Black" Name="line1" Stroke="Black" Canvas.ZIndex="-1"/>
+    </Canvas>-->
 </Page>

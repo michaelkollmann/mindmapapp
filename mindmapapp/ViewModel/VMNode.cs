@@ -91,7 +91,7 @@ namespace mindmapapp.ViewModel
         {
             _collection.Add(item);
             _model.Add(item._model);
-            RaiseCollectionChanged(NotifyCollectionChangedAction.Add);
+            RaiseCollectionChanged(NotifyCollectionChangedAction.Add, item);
         }
 
         public void Clear()
@@ -145,9 +145,28 @@ namespace mindmapapp.ViewModel
 
         private void RaiseCollectionChanged(NotifyCollectionChangedAction Action)
         {
+            RaiseCollectionChanged(Action, null);
+        }
+        private void RaiseCollectionChanged(NotifyCollectionChangedAction Action, Object item)
+        {            
             if (CollectionChanged != null)
             {
-                CollectionChanged(this, new NotifyCollectionChangedEventArgs(Action));
+                switch (Action)
+                {
+                    case NotifyCollectionChangedAction.Add:
+                        CollectionChanged(this, new NotifyCollectionChangedEventArgs(Action, item));
+                        break;
+                    case NotifyCollectionChangedAction.Move:
+                        break;
+                    case NotifyCollectionChangedAction.Remove:
+                        break;
+                    case NotifyCollectionChangedAction.Replace:
+                        break;
+                    case NotifyCollectionChangedAction.Reset:
+                        break;
+                    default:
+                        break;
+                }
             }
         }
         #endregion

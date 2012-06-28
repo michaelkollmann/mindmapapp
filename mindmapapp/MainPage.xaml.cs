@@ -17,40 +17,35 @@ using Windows.UI.Xaml.Navigation;
 
 namespace mindmapapp
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class MainPage : Page
     {
         public MainPage()
         {
             this.InitializeComponent();
-            VMNode master = new VMNode(new Model.MNode("mindmap", new Point(500, 300), Model.NodeState.Master));
-
-            VMNode parent1 = new VMNode(new Model.MNode("design", new Point(400, 400), Model.NodeState.Parent));
-            VMNode parent2 = new VMNode(new Model.MNode("funktionalität", new Point(400, 200), Model.NodeState.Parent));
-
-            VMNode child1 = new VMNode(new Model.MNode("schlicht", new Point(350, 300), Model.NodeState.Child));
-            VMNode child2 = new VMNode(new Model.MNode("metro", new Point(300, 400), Model.NodeState.Child));
-            VMNode child3 = new VMNode(new Model.MNode("aeon", new Point(350, 500), Model.NodeState.Child));
-
-            master.Add(parent1);
-            master.Add(parent2);
-
-            parent1.Add(child1);
-            parent1.Add(child2);
-            parent1.Add(child3);
+            Loaded += delegate
+            {
+                VMNode master = new VMNode(new Model.MNode("mindmap", new Point(500, 300), Model.NodeState.Master));
 
 
+                VMNode parent1 = new VMNode(new Model.MNode("design", new Point(400, 400), Model.NodeState.Parent));
+                VMNode parent2 = new VMNode(new Model.MNode("funktionalität", new Point(400, 200), Model.NodeState.Parent));
+                master.Add(parent1);
+                master.Add(parent2);
 
-            tghtMaster.DataContext = master;
 
-            tghtParent1.DataContext = parent1;
-            tghtParent2.DataContext = parent2;
+                VMNode child1 = new VMNode(new Model.MNode("schlicht", new Point(350, 300), Model.NodeState.Child));
+                VMNode child2 = new VMNode(new Model.MNode("metro", new Point(300, 400), Model.NodeState.Child));
+                VMNode child3 = new VMNode(new Model.MNode("aeon", new Point(350, 500), Model.NodeState.Child));
+                parent1.Add(child1);
+                parent1.Add(child2);
+                parent1.Add(child3);
 
-            tghtChild1.DataContext = child1;
-            tghtChild2.DataContext = child2;
-            tghtChild3.DataContext = child3;
+                Map.SetMaster(master);
+            };
+            SizeChanged += delegate
+            {
+
+            };
         }
 
         /// <summary>
