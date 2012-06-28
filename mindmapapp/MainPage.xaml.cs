@@ -43,14 +43,14 @@ namespace mindmapapp
 
 
 
-            tghtMaster.SetDataContext(master);
+            tghtMaster.DataContext = master;
 
-            tghtParent1.SetDataContext(parent1);
-            tghtParent2.SetDataContext(parent2);
+            tghtParent1.DataContext = parent1;
+            tghtParent2.DataContext = parent2;
 
-            tghtChild1.SetDataContext(child1);
-            tghtChild2.SetDataContext(child2);
-            tghtChild3.SetDataContext(child3);
+            tghtChild1.DataContext = child1;
+            tghtChild2.DataContext = child2;
+            tghtChild3.DataContext = child3;
         }
 
         /// <summary>
