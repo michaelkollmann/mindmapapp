@@ -8,6 +8,12 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:mm="using:mindmapapp.Controls"
     mc:Ignorable="d">
+    <!--<Canvas>
+        <Canvas.RenderTransform>
+            <CompositeTransform CenterX="0.5" CenterY="0.5"/>
+        </Canvas.RenderTransform>
+        <Canvas Background="Beige" Width="40" Height="40" />
+    </Canvas>-->
     <!--<Grid Name="grd" />-->
     <mm:MindMap x:Name="Map"/>
 

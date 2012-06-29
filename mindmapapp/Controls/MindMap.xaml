@@ -7,5 +7,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:mm="using:mindmapapp.Controls"
     Background="#FFEDEDED">
-        <mm:Thought x:Name="MasterNode"/>
+    <!--<Canvas HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Canvas.RenderTransform>
+            <CompositeTransform CenterX="1" CenterY="1"/>
+        </Canvas.RenderTransform>
+    </Canvas>-->
+    <mm:Thought x:Name="MasterNode" />
 </Canvas>

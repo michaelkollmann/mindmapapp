@@ -28,18 +28,6 @@ namespace mindmapapp.Controls
         public void SetMaster(VMNode Master)
         {
             MasterNode.DataContext = Master;
-            Loaded += delegate
-            {
-                CenterMaster();
-            };
-        }
-        public void CenterMaster()
-        {
-            double left = (this.ActualWidth - MasterNode.ActualWidth) / 2;
-            Canvas.SetLeft(MasterNode, left);
-
-            double top = (this.ActualHeight - MasterNode.ActualHeight) / 2;
-            Canvas.SetTop(MasterNode, top); 
         }
 
         //void _datacontext_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)

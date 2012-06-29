@@ -22,30 +22,23 @@ namespace mindmapapp
         public MainPage()
         {
             this.InitializeComponent();
-            Loaded += delegate
-            {
-                VMNode master = new VMNode(new Model.MNode("mindmap", new Point(500, 300), Model.NodeState.Master));
+            VMNode master = new VMNode(new Model.MNode("mindmap", new Point(500, 300), Model.NodeState.Master));
 
 
-                VMNode parent1 = new VMNode(new Model.MNode("design", new Point(400, 400), Model.NodeState.Parent));
-                VMNode parent2 = new VMNode(new Model.MNode("funktionalität", new Point(400, 200), Model.NodeState.Parent));
-                master.Add(parent1);
-                master.Add(parent2);
+            VMNode parent1 = new VMNode(new Model.MNode("design", new Point(400, 400), Model.NodeState.Parent));
+            VMNode parent2 = new VMNode(new Model.MNode("funktionalität", new Point(400, 200), Model.NodeState.Parent));
+            master.Add(parent1);
+            master.Add(parent2);
 
 
-                VMNode child1 = new VMNode(new Model.MNode("schlicht", new Point(350, 300), Model.NodeState.Child));
-                VMNode child2 = new VMNode(new Model.MNode("metro", new Point(300, 400), Model.NodeState.Child));
-                VMNode child3 = new VMNode(new Model.MNode("aeon", new Point(350, 500), Model.NodeState.Child));
-                parent1.Add(child1);
-                parent1.Add(child2);
-                parent1.Add(child3);
+            VMNode child1 = new VMNode(new Model.MNode("schlicht", new Point(350, 300), Model.NodeState.Child));
+            VMNode child2 = new VMNode(new Model.MNode("metro", new Point(300, 400), Model.NodeState.Child));
+            VMNode child3 = new VMNode(new Model.MNode("aeon", new Point(350, 500), Model.NodeState.Child));
+            parent1.Add(child1);
+            parent1.Add(child2);
+            parent1.Add(child3);
 
-                Map.SetMaster(master);
-            };
-            SizeChanged += delegate
-            {
-
-            };
+            Map.SetMaster(master);
         }
 
         /// <summary>
