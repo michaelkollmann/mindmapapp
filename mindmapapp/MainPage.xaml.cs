@@ -5,6 +5,7 @@ using System.Linq;
 using mindmapapp.ViewModel;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -12,6 +13,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.Xaml.Shapes;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -38,7 +40,7 @@ namespace mindmapapp
             parent1.Add(child2);
             parent1.Add(child3);
 
-            Map.SetMaster(master);
+            tghtMaster.DataContext = master;
         }
 
         /// <summary>
@@ -48,26 +50,15 @@ namespace mindmapapp
         /// property is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            //Rectangle r = new Rectangle();
+            //r.Width = 50;
+            //r.Height = 50;
+            //r.Fill = new SolidColorBrush(Colors.Blue);
+
+            //Canvas.SetLeft(r, 0);
+            //Canvas.SetTop(r, 0);
+
+            //cnvs.Children.Add(r);
         }
-
-
-        //private void Canvas_PointerPressed_1(object sender, PointerRoutedEventArgs e)
-        //{
-        //    _isPressed = true;
-        //}
-
-        //private void Canvas_PointerMoved_1(object sender, PointerRoutedEventArgs e)
-        //{
-        //    if (_isPressed)
-        //    {
-        //        cnvs.SetValue(Canvas.LeftProperty, e.GetCurrentPoint(null).Position.X - 20);
-        //        cnvs.SetValue(Canvas.TopProperty, e.GetCurrentPoint(null).Position.Y - 20);
-        //    }
-        //}
-
-        //private void cnvs_PointerCaptureLost_1(object sender, PointerRoutedEventArgs e)
-        //{
-        //    _isPressed = false;
-        //}
     }
 }

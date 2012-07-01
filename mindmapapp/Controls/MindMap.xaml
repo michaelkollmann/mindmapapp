@@ -1,16 +1,12 @@
-﻿<Canvas
+﻿<UserControl
     x:Class="mindmapapp.Controls.MindMap"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:mindmapapp.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:mm="using:mindmapapp.Controls"
-    Background="#FFEDEDED">
-    <!--<Canvas HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-        <Canvas.RenderTransform>
-            <CompositeTransform CenterX="1" CenterY="1"/>
-        </Canvas.RenderTransform>
-    </Canvas>-->
-    <mm:Thought x:Name="MasterNode" />
-</Canvas>
+    xmlns:mm="using:mindmapapp.Controls">
+    <mm:CartesianCanvas x:Name="Map" Background="#FFEDEDED">
+        <mm:Thought x:Name="MasterNode" />
+    </mm:CartesianCanvas>
+</UserControl>

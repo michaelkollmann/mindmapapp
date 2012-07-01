@@ -8,6 +8,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:mm="using:mindmapapp.Controls"
     mc:Ignorable="d">
+    <!--<mm:MindMap x:Name="Map"/>-->
+    <mm:CartesianCanvas x:Name="cnvs" Background="Blue" Width="500" Height="500">
+        <mm:Thought x:Name="tghtMaster" />
+    </mm:CartesianCanvas>
     <!--<Canvas>
         <Canvas.RenderTransform>
             <CompositeTransform CenterX="0.5" CenterY="0.5"/>
@@ -15,7 +19,7 @@
         <Canvas Background="Beige" Width="40" Height="40" />
     </Canvas>-->
     <!--<Grid Name="grd" />-->
-    <mm:MindMap x:Name="Map"/>
+    
 
     <!--<Canvas Background="#FFEDEDED"  >
         <mm:Thought HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="tghtMaster" Canvas.Left="{Binding Point.X}" Canvas.Top="{Binding Point.Y}"/>

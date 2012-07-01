@@ -17,9 +17,8 @@ using Windows.UI.Xaml.Navigation;
 
 namespace mindmapapp.Controls
 {
-    public sealed partial class MindMap : Canvas
+    public sealed partial class MindMap : UserControl
     {
-        //VMNode _datacontext;
         public MindMap()
         {
             this.InitializeComponent();
@@ -29,30 +28,5 @@ namespace mindmapapp.Controls
         {
             MasterNode.DataContext = Master;
         }
-
-        //void _datacontext_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //public new object DataContext
-        //{
-        //    get
-        //    {
-        //        return _datacontext;
-        //    }
-        //    set
-        //    {
-        //        if (value.GetType().Equals(typeof(VMNode)))
-        //        {
-        //            if (_datacontext != null)
-        //            {
-        //                _datacontext.CollectionChanged -= _datacontext_CollectionChanged;
-        //            }
-        //            _datacontext = value as VMNode;
-        //            _datacontext.CollectionChanged += _datacontext_CollectionChanged;
-        //        }
-        //    }
-        //}
     }
 }
